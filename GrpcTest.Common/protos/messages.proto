@@ -1,0 +1,57 @@
+﻿syntax = "proto3";
+// TODO: this doesn't work'
+//import "google/protobuf/timestamp.proto";
+
+package GrpcTest.Common.Messages;
+
+message HelloNameRequest
+{
+	string name = 1;
+}
+
+message HelloNameResponse
+{
+	string message = 1;
+}
+
+message HelloRequest
+{
+	string Name = 1;
+	int32 Age = 2;
+	bool IsHappy = 3;
+	int64 DateOfBirthLong = 4;
+	//google.protobuf.Timestamp DateOfBirth = 5;
+}
+
+message HelloResponse
+{
+	string message = 1;
+}
+
+message HelloListRequest
+{
+	repeated string names = 1;
+}
+
+message HelloListResponse
+{
+	repeated string names = 1;
+}
+
+message HelloStreamListRequest
+{
+	repeated string names = 1;
+}
+
+message HelloStreamListResponse
+{
+	repeated string names = 1;
+}
+
+service HelloService
+{
+	rpc SayHello (HelloNameRequest) returns (HelloNameResponse);
+	rpc SayHelloWithDetails (HelloRequest) returns (HelloResponse);
+	rpc SayHelloList (HelloListRequest) returns (HelloListResponse);
+	rpc SayHelloListStream (HelloStreamListRequest) returns (HelloStreamListResponse);
+}

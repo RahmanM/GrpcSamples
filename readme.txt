@@ -1,0 +1,5 @@
+- install Grpc.Tools (This creates a folder inside the packages e.g. GrpcTest.Server\packages\Grpc.Tools.1.8.3\tools\windows_x64)
+- install grpc
+- Create the messages.proto file
+- Generate code using the protoc.bat file (set the protoc tools folder in bat file e.g. GrpcTest.Server\packages\Grpc.Tools.1.8.3\tools\windows_x64)
+- Add reference to google.protobuf
